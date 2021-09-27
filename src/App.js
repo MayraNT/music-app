@@ -6,6 +6,7 @@ import { TextField } from '@material-ui/core';
 
 import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
+
 import './App.css';
 
 function App() {
