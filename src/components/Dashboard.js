@@ -1,5 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+// import { useEffect } from 'react';
 
 import NavBar from './NavBar';
 import CardBlock from './Card';
@@ -21,10 +22,6 @@ export default function Dashboard() {
   
   // useEffect(() => {
   //   console.log("render")
-
-  //   return () => {
-  //     console.log("unmount")
-  //   }
   // }, [isOnline, volume, quality])
 
   return (
