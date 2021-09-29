@@ -5,14 +5,10 @@ import { MenuItem } from '@material-ui/core';
 import { FormControl } from '@material-ui/core';
 import { Select } from '@material-ui/core';
 
-// STILL NEEDS WORK w error in console
-
-export default function SelectQuality() {
-  const [quality, setquality] = React.useState('');
-
+export default function SelectQuality({ quality, setQuality }) {
   const handleSelect = (event) => {
-    setquality(event.target.value);
-    console.log(quality);
+    setQuality(event.target.value);
+    console.log('quality:', event.target.value);
   };
 
   return (
@@ -26,9 +22,9 @@ export default function SelectQuality() {
           onChange={handleSelect}
           label="quality"
         >
-          <MenuItem value={1}>Low</MenuItem>
-          <MenuItem value={2}>Normal</MenuItem>
-          <MenuItem value={3}>High</MenuItem>
+          <MenuItem value={'Low'}>Low</MenuItem>
+          <MenuItem value={'Normal'}>Normal</MenuItem>
+          <MenuItem value={'High'}>High</MenuItem>
         </Select>
       </FormControl>
     </div>

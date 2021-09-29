@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 import { Box } from '@material-ui/core';
 import { Slider } from '@material-ui/core';
@@ -8,12 +8,11 @@ function valuetext(value) {
   return `${value}`;
 }
 
-export default function VolumeSlider() {
-  const [volume, setVolume] = useState(20);
+export default function VolumeSlider({ volume, setVolume }) {
 
   const handleSlider = (event, value) => {
     setVolume(event.target.value)
-    console.log(value);
+    console.log('volume:', value);
   }
 
   return (

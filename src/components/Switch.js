@@ -1,16 +1,12 @@
 import * as React from 'react';
-import { useState } from 'react';
-
 import { Switch } from '@material-ui/core';
 
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
-export default function OnlineSwitch() {
-  const [isOnline, setIsOnline] = useState(true);
-
-  const handleSwitch = (event) => {
+export default function OnlineSwitch({ isOnline, setIsOnline }) {
+  const handleSwitch = () => {
     setIsOnline(!isOnline);
-    console.log(isOnline);
+    console.log('online:', isOnline);
   }
 
   return (

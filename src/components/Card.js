@@ -15,7 +15,9 @@ export default function CardBlock(props) {
     isOnline, 
     setIsOnline, 
     volume, 
-    setVolume
+    setVolume,
+    quality,
+    setQuality
   } = props;
 
   return (
@@ -34,6 +36,8 @@ export default function CardBlock(props) {
           setIsOnline={setIsOnline} 
           volume={volume} 
           setVolume={setVolume}
+          quality={quality}
+          setQuality={setQuality}
         />
       </CardActions>
     </Card>
