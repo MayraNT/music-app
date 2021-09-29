@@ -5,15 +5,14 @@ const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
 export default function OnlineSwitch({ isOnline, setIsOnline }) {
   const handleSwitch = () => {
-    setIsOnline(!isOnline);
-    console.log('online:', isOnline);
+    setIsOnline(isOnline ? false : true);
   }
 
   return (
     <div>
       <Switch 
         {...label} 
-        checked={!isOnline}
+        checked={isOnline}
         onChange={handleSwitch}
       />
     </div>

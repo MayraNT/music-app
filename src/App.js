@@ -16,23 +16,31 @@ function App() {
     loggedIn ? <Dashboard /> :
       <div className="App">
         <NavBar />
-        <TextField required 
-          id="standard-basic" 
-          label="Username" 
-          variant="standard" 
-        />
-        <TextField required 
-          id="standard-basic" 
-          label="Password" 
-          variant="standard" 
-        />
-        <Button variant="contained" 
-          onClick={() => {
-            !loggedIn ? setLoggedIn(true) : setLoggedIn(false)
-          }}
-        >
-          Login
-        </Button>
+        <div className="login-form-container">
+          <div className="login-form">
+            <TextField required 
+              id="standard-basic" 
+              label="Username" 
+              variant="standard" 
+            />
+            <TextField required 
+              id="standard-basic" 
+              label="Password" 
+              variant="standard" 
+            />
+            <Button 
+              variant="contained" 
+              color="primary" 
+              fullWidth="true" 
+              style={{ marginTop: 30 }}
+              onClick={() => {
+                !loggedIn ? setLoggedIn(true) : setLoggedIn(false)
+              }}
+            >
+              Login
+            </Button>
+          </div>
+        </div>
       </div>
   );
 }

@@ -13,7 +13,7 @@ export default function SelectQuality({ quality, setQuality }) {
 
   return (
     <div>
-      <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+      <FormControl variant="standard" sx={{ m: 1, minWidth: 200 }}>
         <InputLabel id="demo-simple-select-standard-label">Quality</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
@@ -21,6 +21,7 @@ export default function SelectQuality({ quality, setQuality }) {
           value={quality}
           onChange={handleSelect}
           label="quality"
+          style={{ width: 250 }}
         >
           <MenuItem value={'Low'}>Low</MenuItem>
           <MenuItem value={'Normal'}>Normal</MenuItem>

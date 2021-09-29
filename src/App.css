@@ -2,3 +2,37 @@
   text-align: center;
 }
 
+.login-form-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-container {
+  margin: 15px 18%;
+  width: 65vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome {
+  color: gray;
+}
+
+.cards-container {
+  margin: 35px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card-block {
+  width: 270px;
+}

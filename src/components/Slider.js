@@ -9,11 +9,10 @@ function valuetext(value) {
 }
 
 export default function VolumeSlider({ volume, setVolume }) {
-
   const handleSlider = (event, value) => {
-    setVolume(event.target.value)
+    setVolume(event.target.value);
     console.log('volume:', value);
-  }
+  };
 
   return (
     <Box sx={{ width: 300 }}>
