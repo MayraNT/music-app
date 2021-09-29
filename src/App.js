@@ -31,7 +31,7 @@ function App() {
             <Button 
               variant="contained" 
               color="primary" 
-              fullWidth="true" 
+              fullWidth={true} 
               style={{ marginTop: 30 }}
               onClick={() => {
                 !loggedIn ? setLoggedIn(true) : setLoggedIn(false)

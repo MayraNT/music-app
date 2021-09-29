@@ -1,8 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-import { Typography } from '@material-ui/core';
-
 import NavBar from './NavBar';
 import CardBlock from './Card';
 import OnlineSwitch from './Switch';
@@ -15,26 +13,19 @@ export default function Dashboard() {
   const [isOnline, setIsOnline] = useState(true);
   const [volume, setVolume] = useState(20);
   const [quality, setQuality] = useState('Normal');
-  const [notifications, setNotifications] = useState([]);
+  // const [notifications, setNotifications] = useState([]);
 
-  // If the online status is "false" add the message Your application is offline. You won't be able to share or stream music to other devices.
-  // If the volume exceeds 80, add the message Listening to music at a high volume could cause long-term hearing loss.
-  // If the sound quality is changed to low, add the message Music quality is degraded. Increase quality if your connection allows it.
+  const offlineNotification = "Your application is offline. You won't be able to share or stream music to other devices.";
+  const highVolumeNotification = "Listening to music at a high volume could cause long-term hearing loss.";
+  const lowQualityNotification = "Music quality is degraded. Increase quality if your connection allows it.";
   
-  
-
   // useEffect(() => {
-  //   const offlineNotification = "Your application is offline. You won't be able to share or stream music to other devices.";
-  //   // const highVolumeNotification = "Listening to music at a high volume could cause long-term hearing loss.";
-  //   // const lowQualityNotification = "Music quality is degraded. Increase quality if your connection allows it.";
+  //   console.log("render")
 
-  //   if (isOnline === false) {
-  //     setNotifications({ notifications: offlineNotification});
-  //   } else {
-  //     setNotifications({ notifications: notifications });
+  //   return () => {
+  //     console.log("unmount")
   //   }
-
-  // }, [isOnline, notifications]);
+  // }, [isOnline, volume, quality])
 
   return (
     <div className="dashboard">
@@ -66,11 +57,15 @@ export default function Dashboard() {
         </section>
         <h2>System Notifications:</h2>
         <ol>
-          {notifications.length && notifications.map((notification, index) => {
-            return <li key={index}>{notification}</li>
-          })}
+          {(!isOnline) && <li>{offlineNotification}</li>}
+          {(volume > 80) && <li>{highVolumeNotification}</li>}
+          {(quality === 'Low') && <li>{lowQualityNotification}</li>}
         </ol>
       </div>
     </div>
   );
 }
+
+// {notifications.map((notification, index) => {
+//   return <li key={index}>{notification}</li>
+// })}
